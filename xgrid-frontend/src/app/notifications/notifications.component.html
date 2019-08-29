@@ -1,0 +1,11 @@
+<div id="notification-container" class="notification-top-right" >
+  <div class="notification {{cssClass(item) }}" aria-live="polite" style="display: block;" *ngFor="let item of notifications">
+    <button type="button" class="notification-close-button" role="button" (click)="removeNotification(item)">×</button>
+    <div class="notification-title">
+      {{item.title}}
+    </div>
+    <div class="notification-message">
+      {{item.message}}
+    </div>
+  </div>
+</div>

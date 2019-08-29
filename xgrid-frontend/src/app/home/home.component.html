@@ -1,0 +1,72 @@
+
+
+<div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+  <div class="wrapper wrapper--w680">
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6">
+        <h1>Welcome {{loggedUser.firstName}}</h1>
+          </div>
+          <div class="col-md-6">
+            <p class="float-right"><a [routerLink]="['/login']">Logout</a></p>
+            <p class="float-right" style="margin-right: 10px">{{loggedUser.userId}}</p>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-12">
+            <table class="table table-dark" *ngIf="notificatons.length > 0">
+              <thead>
+              <th scope="col">Type</th>
+              <th scope="col">Title</th>
+              <th scope="col">Message</th>
+              <th scope="col">Time Out</th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              </thead>
+              <tbody>
+              <tr *ngFor="let notificaton of notificatons">
+                <td>
+                  <span>
+                    {{getTypeName(notificaton?.type)}}
+                  </span>
+                </td>
+                <td>
+                    <span>
+                      {{notificaton?.title}}
+                    </span>
+                </td>
+                <td>
+                    <span>
+                      {{notificaton?.message}}
+                    </span>
+                </td>
+                <td>
+                    <span>
+                      {{notificaton?.timeOut}}
+                    </span>
+                </td>
+              <td>
+                <a (click)="trigger(notificaton)">Trigger</a>
+              </td>
+              <td>
+                <a (click)="delete(notificaton._id)">Delete</a>
+              </td>
+              </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-12">
+            <app-trigger-notification (saveNotification)="save($event)"></app-trigger-notification>
+          </div>
+        </div>
+        <br>
+      </div>
+    </div>
+  </div>
+</div>

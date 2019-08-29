@@ -1,0 +1,36 @@
+<form name="form" #triggerForm="ngForm" novalidate>
+  <div class="row">
+    <div class="col-md-6">
+        <label for="type">Type</label>
+        <select class="form-control" id="type" required  [(ngModel)]="model.type" [ngModelOptions]="{standalone: true}" >
+          <option *ngFor="let type of types"
+                  [ngValue]="type.value">{{type.label}}</option>
+        </select>
+    </div>
+    <div class="col-md-6">
+        <label for="title">Title</label>
+        <input type="title" class="form-control" name="title" [(ngModel)]="model.title" #title="ngModel" required />
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-6">
+        <label for="message">Message</label>
+        <input type="text" class="form-control" name="message" [(ngModel)]="model.message" #message="ngModel" required />
+    </div>
+    <div class="col-md-6">
+      <label for="timeOut">Time Out</label>
+      <input type="number" class="form-control" name="timeOut" [(ngModel)]="model.timeOut" #message="ngModel"/>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <button class="btn btn-primary" [disabled]="triggerForm.invalid" (click)="triggerNotification()">Trigger</button>
+        <button style="margin-left: 10px;" class="btn btn-primary" [disabled]="triggerForm.invalid" (click)="save()">Save</button>
+      </div>
+    </div>
+  </div>
+
+</form>

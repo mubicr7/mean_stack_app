@@ -1,0 +1,42 @@
+
+<div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+  <div class="wrapper wrapper--w680">
+    <div class="card">
+      <div class="card-body">
+        <h2 class="title">Sign In</h2>
+
+          <form name="form" (ngSubmit)="loginForm.form.valid && signIn()" #loginForm="ngForm" novalidate>
+            <div class="row">
+              <div class="col-md-6">
+            <div class="form-group" [ngClass]="{ 'has-error': loginForm.submitted && !userId.valid }">
+              <label class="label" for="userId">USER ID</label>
+              <input type="text" class="form-control" name="userId" [(ngModel)]="model.userId" #userId="ngModel" required />
+              <div *ngIf="loginForm.submitted && !userId.valid" class="help-block">ID is required</div>
+            </div>
+              </div>
+
+            <div class="col-md-6">
+            <div class="form-group" [ngClass]="{ 'has-error': loginForm.submitted && !password.valid }">
+              <label class="label" for="password">PASSWORD</label>
+              <input type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" required />
+              <div *ngIf="loginForm.submitted && !password.valid" class="help-block">Password is required</div>
+            </div>
+
+            </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-md-4">
+            <div class="form-group">
+              <button *ngIf="!loading" class="btn btn-primary">Login</button>
+              <img *ngIf="loading" src="../../assets/images/loader.gif" />
+              <a [routerLink]="['/signUp']" class="btn btn-link">Register</a>
+            </div>
+              </div>
+            </div>
+          </form>
+
+      </div>
+    </div>
+  </div>
+</div>

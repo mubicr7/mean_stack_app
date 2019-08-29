@@ -1,0 +1,14 @@
+td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+th {
+  text-align: center;
+  vertical-align: middle;
+}
+
+a {
+  color: cadetblue !important;
+  cursor: pointer !important;
+}

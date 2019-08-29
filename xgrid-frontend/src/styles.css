@@ -1,0 +1,46 @@
+/* You can add global styles to this file, and also import other style files */
+.title {
+  font-size: 24px;
+  color: #525252;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+.page-wrapper {
+  min-height: 100vh;
+}
+
+.bg-gra-02 {
+  background: linear-gradient(to top right, #2d3f5b 0%, #79b7be 100%);
+}
+
+.p-t-130 {
+  padding-top: 130px;
+}
+
+.p-b-100 {
+  padding-bottom: 100px;
+}
+
+.font-poppins {
+  font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
+}
+
+.wrapper {
+  margin: 0 auto;
+}
+
+.wrapper--w680 {
+  max-width: 680px;
+}
+
+
+.label {
+  font-size: 16px;
+  color: #555;
+  text-transform: capitalize !important;
+  display: block;
+  margin-bottom: 5px;
+}
+
+
